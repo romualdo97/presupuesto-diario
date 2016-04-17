@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contable App</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<h1>Contable app by Romualdo</h1>
+		<div>
+			<input id="fondos" class="bigInput" type="number" placeholder="presupuesto inicial" onchange="setfondos(this.value);">
+			 pesos de presupuesto para administrar durante 
+			<input id="numDias" class="bigInput" type="number" placeholder="administrar durante..." onchange="setNumeroDiasPorAdministrar(this.value);">
+			 dias			
+		</div>
+		<hr>
+		<div>
+			<input class="bigInput" type="number" placeholder="registrar consumo" onchange="registrarConsumo(this.value);">
+			
+			<input class="bigInput" type="number" placeholder="registrar ingreso"
+			onchange="registrarIngreso(this.value);">
+		</div>
+		<hr>
+		<div>
+			¿Cuanto deberia gastar hoy? <b><span class="bigText" id="cuantoGastar"></span>COP</b>
+		</div>
+		<div>
+			¿Cuantos dias faltan? <b><span class="bigText" id="cuantosDias"></span></b>
+		</div>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</body>
+</html>
