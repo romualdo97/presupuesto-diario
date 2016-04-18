@@ -32,7 +32,7 @@ function setNumeroDiasPorAdministrar(value)
 {
 	numeroDias = value;
 	console.log("dias establecidos");
-	if (!localStorage.fechaCreacion)
+	//if (!localStorage.fechaCreacion)
 		localStorage.fechaCreacion = fecha_formato_hoy;
 	saveChanges();
 }
