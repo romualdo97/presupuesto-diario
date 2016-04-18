@@ -1,3 +1,4 @@
+// 245571 durante 22dias
 var fondos = 0, // dinero con que se cuenta
 	numeroDias = 0; // numero de dias que se debe administrar el fondo
 var hoy = new Date(),
@@ -61,7 +62,7 @@ function registrarIngreso(value)
 
 function getCuantoDeberiaGastarHoy(value)
 {
-	return fondos/numeroDias;
+	return Math.floor(fondos/getDiasRestantes());
 }
 
 // @arguments: strings en el siguiente formato de fecha dd/mm/yyyy
@@ -78,7 +79,7 @@ function getDiasTranscurridos(fecha1, fecha2)
 
 function getDiasRestantes()
 {
-	return numeroDias - getDiasTranscurridos(fecha_formato_hoy, localStorage.fechaCreacion);
+	return numeroDias - getDiasTranscurridos(localStorage.fechaCreacion, fecha_formato_hoy);
 }
 
 function mostrarCuantoDeberiaGastar()
