@@ -61,7 +61,7 @@ function registrarIngreso(value)
 
 function getCuantoDeberiaGastarHoy(value)
 {
-	return fondos/numeroDias;
+	return Math.floor(fondos/getDiasRestantes());
 }
 
 // @arguments: strings en el siguiente formato de fecha dd/mm/yyyy
@@ -78,7 +78,7 @@ function getDiasTranscurridos(fecha1, fecha2)
 
 function getDiasRestantes()
 {
-	return numeroDias - getDiasTranscurridos(fecha_formato_hoy, localStorage.fechaCreacion);
+	return numeroDias - getDiasTranscurridos(localStorage.fechaCreacion, fecha_formato_hoy);
 }
 
 function mostrarCuantoDeberiaGastar()
