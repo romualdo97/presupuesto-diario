@@ -17,11 +17,12 @@
 		
 		<hr>
 
-		<div>
-			<input class="bigInput" type="number" placeholder="registrar consumo" onchange="registrarConsumo(this.value);">
+		<div>			
+			<input class="bigInput" type="number" placeholder="Registrar consumo" onchange="registrarConsumo(this.value);" onfocusout="saveOnHistory(this.value);">
 			
+			<!--
 			<input class="bigInput" type="number" placeholder="registrar ingreso"
-			onchange="registrarIngreso(this.value);">
+			onchange="registrarIngreso(this.value);"> -->
 		</div>
 		<hr>
 		<div>
@@ -30,6 +31,12 @@
 		<div>
 			¿Cuantos dias faltan? <b><span class="bigText" id="cuantosDias"></span></b>
 		</div>
+
+		<hr>
+		<h1>Historial de gastos</h1>
+		<input type="button" value="Borrar historial" onclick="resetHistorial()" ></input>
+		<ul id="historialGastos">
+		</ul>
 		<script type="text/javascript" src="scripts/main.js"></script>
 	</body>
 </html>
