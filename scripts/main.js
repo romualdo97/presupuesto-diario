@@ -103,6 +103,11 @@ function saveChanges()
 	mostrarCuantoDeberiaGastar();
 }
 
+// Asegura que exista el objeto q almacena el historial
+if (typeof localStorage.historialGastos === "undefined") {
+    loaclStorage.historialGastos = [];
+}
+
 // HISTORIAL DE GASTOS
 function saveOnHistory( value )
 {
