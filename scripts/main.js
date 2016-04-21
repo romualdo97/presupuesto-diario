@@ -123,7 +123,7 @@ function resetHistorial()
 
 function mostrarHistorialDeGastos()
 {	
-	gastosInServer = JSON.parse( localStorage.historialGastos );
+	var gastosInServer = JSON.parse( localStorage.historialGastos );
 	console.log("Probando persistencia... ");
 	console.log(gastosInServer)
 	console.log(gastosInServer.length)
