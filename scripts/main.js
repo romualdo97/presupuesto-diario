@@ -111,7 +111,11 @@ function saveChanges()
 // HISTORIAL DE GASTOS
 function saveOnHistory( value )
 {
-	var gastos = JSON.parse( localStorage.historialGastos );
+	var gastos = [];
+	if (localStorage.historialGastos)
+	{
+		gastos = JSON.parse( localStorage.historialGastos );
+	}
 
 	gastos.push(value);
 	console.log("Guardado");
