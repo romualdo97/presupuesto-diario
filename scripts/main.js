@@ -105,7 +105,7 @@ function saveChanges()
 
 // Asegura que exista el objeto q almacena el historial
 if (typeof localStorage.historialGastos === "undefined") {
-    localStorage.historialGastos = [];
+    localStorage.historialGastos = JSON.stringify([]);
 }
 
 // HISTORIAL DE GASTOS
