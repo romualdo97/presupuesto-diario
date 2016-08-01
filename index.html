@@ -23,27 +23,43 @@
 				<b>TIP:</b> Presiona Enter o Clicka afuera de los campos para poder ver los cambios.
 			</p><br>
 		</div>
+		
 		<hr>
 		<div>
 			<p>
-				<b>AYUDA:</b> Registra aquí todo lo que gastes hoy. 
+				<b>AYUDA:</b> Registra aquí todo lo que gastes hoy.				
 			</p>
-			<input class="bigInput" type="number" placeholder="registrar consumo" onchange="registrarConsumo(this.value);">
+			<input class="bigInput" type="number" placeholder="Registrar consumo" onchange="registrarConsumo(this.value);">
 			<!--
 			<input class="bigInput" type="number" placeholder="registrar ingreso"
 			onchange="registrarIngreso(this.value);">-->
 		</div><br>
+
 		<hr>
 		<div>
+			<b>TIP:</b> Si esta es la primera vez que abres la app el día de hoy toma nota del valor que te aparece abajo e intenta no gastar más de eso en el día, ten en cuenta que cuando registras un gasto se actualizara el valor pero no quiere decir que puedas seguir gastando indefinidamente (estamos trabajando en mejorar esto)
+			<br><br>
 			¿Cuanto deberia gastar hoy? <b><span class="bigText" id="cuantoGastar"></span>COP</b>
+			<br>
+			<br>
 		</div>
 		<div>
 			¿Cuantos dias faltan? <b><span class="bigText" id="cuantosDias"></span></b>
 		</div>
 		<hr>
+
+		<br>
 		<p><b>IMPORTANTE:</b> Esta aplicación es un producto aun en etapa de desarrollo temprano, muchos elementos pueden cambiar. Con tu ayuda podremos ir mejorándola día a día. Envíanos tus sugerencias y comentarios a través de alguna de las siguientes redes.</p>
 		<a href="https://www.facebook.com/gamebite10/" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
 		<a href="https://twitter.com/gamebite10" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
-		<script type="text/javascript" src="scripts/main.js"></script>
+<!--
+		<hr>
+		<h1>Historial de gastos</h1>
+		<input type="button" value="Borrar historial" onclick="resetHistorial()" ></input>
+		<ul id="historialGastos">
+		</ul>
+		-->
+		<script type="text/javascript" src="scripts/monetizacion.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>		
 	</body>
 </html>
