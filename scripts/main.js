@@ -40,7 +40,12 @@ function setNumeroDiasPorAdministrar(value)
 		localStorage.fechaCreacion = fecha_formato_hoy;
 	saveChanges();
 
-	pagariasPorEstaApp();
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Inputs',
+	  eventAction: 'numeroDeDias',
+	  eventLabel: 'Fue establecido el numero de dias por administrar'
+	});
 }
 
 // listo
@@ -50,6 +55,13 @@ function setfondos(value)
 	fondos = value;
 	console.log("Fondos establecidos");
 	saveChanges();
+
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Inputs',
+	  eventAction: 'presupuesto',
+	  eventLabel: 'Fue establecida la cantidad de dinero a administrar'
+	});
 }
 
 function registrarConsumo(value)
@@ -57,6 +69,13 @@ function registrarConsumo(value)
 	fondos -= value;
 	fondos_element.value = fondos;
 	saveChanges();
+
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Inputs',
+	  eventAction: 'gasto',
+	  eventLabel: 'El usuario registro un gasto en la app'
+	});
 }
 
 function registrarIngreso(value)
