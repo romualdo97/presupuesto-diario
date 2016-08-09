@@ -51,7 +51,7 @@
 
 			<div class="alert alert-warning">
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-				<strong>AYUDA: </strong> Lo primero que tienes que hacer para conocer siempre cuanto deberías gastar hoy es contestar las siguientes dos preguntas. 
+				<strong>AYUDA: </strong> Lo primero que debes hacer para conocer cuánto debes gastar hoy es contestar las siguientes dos preguntas.
 			</div>
 
 			<form class="form-inline" role="form">
@@ -76,7 +76,9 @@
 							<strong>Dias</strong>
 						</div>						
 					</div>
-					<button type="submit" class="btn-lg btn-primary">Calcular</button>
+					<button type="submit" 
+					class="btn-lg btn-primary"
+					onclick="preventDefault();">Calcular</button>
 				</div>
 			</form>
 
@@ -86,42 +88,8 @@
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				<strong>Tip: </strong> Presiona Enter o Clicka afuera de los campos para poder ver los cambios.
 			</div>
-<!--
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="fondos">
-						Mi presupuesto es de:
-					</label>
-					<div class="col-sm-10">
-						<input type="number" class="form-control" 
-						id="fondos" placeholder="¿Cuánto dinero?" 
-						onchange="setfondos(this.value);">
-					</div>
-				</div>
-			</form>
 
-			<input id="fondos" class="bigInput" type="number" 
-			placeholder="¿Cuánto dinero?" onchange="setfondos(this.value);">
--->
-		<!--	
-			<hr>
-
-			<p>
-				<b>AYUDA:</b> Lo primero que tienes que hacer para conocer siempre cuanto debería  gastar hoy es contestar las siguientes dos preguntas. 
-			</p>-->
-<!--
-			para administrar durante
-			<input id="numDias" class="bigInput" type="number" placeholder="¿Cuántos días?" onchange="setNumeroDiasPorAdministrar(this.value);">
-			 dias			
-
-			<p>
-				<b>TIP:</b> Presiona Enter o Clicka afuera de los campos para poder ver los cambios.
-			</p>
-
-			<br>
-			-->
-			<hr>
-			
+			<hr>			
 
 			<h2>¿Cuánto dinero he gastado hoy?</h2>
 			
@@ -140,7 +108,9 @@
 					placeholder="Registrar consumo"
 					onchange="registrarConsumo(this.value);">
 				</div>
-				<button type="submit" class="btn-lg btn-danger">Registrar</button>
+				<button type="submit" 
+				class="btn-lg btn-danger"
+				onclick="preventDefault();">Registrar</button>
 			</form>
 <!--
 			<p>
