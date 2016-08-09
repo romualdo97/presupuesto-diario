@@ -10,6 +10,29 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+		<!-- Google analitycs -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-70407066-3', 'auto');
+		  ga('send', 'pageview');
+		</script>
+		<!-- END Google analitycs -->
+
+		<script type="text/javascript">
+			function gaHitEvent(category, action, label) {
+				ga('send', {
+				  hitType: 'event',
+				  eventCategory: category,
+				  eventAction: action,
+				  eventLabel: label
+				});
+			}
+		</script>
+
 	</head>
 	<body>
 
@@ -158,15 +181,15 @@
 
 			<hr>
 
-			<h1><a href="https://goo.gl/forms/CmrVv3T4KTX37hi12" target="_blank"><span style="font-size: 34pt">Mantenme al tanto de las mejoras!!</span></a></h1>
+			<h1><a href="https://goo.gl/forms/CmrVv3T4KTX37hi12" target="_blank" onclick="gaHitEvent('social', 'subscribe', 'El usuario abrio el link para subscribirse al newsletter')"><span style="font-size: 34pt">Mantenme al tanto de las mejoras!!</span></a></h1>
 
 			<p><b>IMPORTANTE:</b> Esta aplicación es un producto aun en etapa de desarrollo temprano, muchos elementos pueden cambiar. Con tu ayuda podremos ir mejorándola día a día. Envíanos tus sugerencias y comentarios a través de alguna de las siguientes redes.</p>
 			<div class="row">
 				<div class="col-xs-6">
-					<a href="https://www.facebook.com/gamebite10/" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
+					<a href="https://www.facebook.com/gamebite10/" onclick="gaHitEvent('social', 'facebook', 'El usuario dio click en la red social de facebook')" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
 				</div>
 				<div class="col-xs-6">
-					<a href="https://twitter.com/gamebite10" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
+					<a href="https://twitter.com/gamebite10" onclick="gaHitEvent('social', 'twitter', 'El usuario dio click en la red social de twitter')" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
 				</div>
 			</div>
 		</div>
@@ -179,19 +202,7 @@
 		<input type="button" value="Borrar historial" onclick="resetHistorial()" ></input>
 		<ul id="historialGastos">
 		</ul>
-		-->		
-
-		<!-- Google analitycs -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-70407066-3', 'auto');
-		  ga('send', 'pageview');
-		</script>
-		<!-- END Google analitycs -->
+		-->	
 
 		<!--<script type="text/javascript" src="scripts/metricas.js"></script>-->
 		<script type="text/javascript" src="scripts/main.js"></script>
