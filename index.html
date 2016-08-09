@@ -19,29 +19,50 @@
 		
 			<h2>
 				Dinero disponible
+				<small>
+					Calculemos tu presupuesto
+				</small>
 			</h2>
-			<h4>
-				Primero vamos a calcular cuanto dinero tienes disponible en este momento.
-			</h4>
 
-			<form class="form-inline">
+			<br>
+
+			<div class="alert alert-warning">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>AYUDA: </strong> Lo primero que tienes que hacer para conocer siempre cuanto deberías gastar hoy es contestar las siguientes dos preguntas. 
+			</div>
+
+			<form class="form-inline" role="form">
 				<div class="form-group">
-					<label class="sr-only" for="exampleInputAmount">
-						Amount (in dollars)
-					</label>
 					<div class="input-group">
-					<div class="input-group-addon">COP</div>
-
-					<input type="number" 
-					class="form-control" 
-					id="fondos" 
-					placeholder="¿Cuánto dinero?">
-
-					<div class="input-group-addon">.00</div>
+						<input type="number" 
+						class="form-control input-lg" 
+						id="fondos"
+						placeholder="¿Mi presupuesto es de?"
+						onchange="setfondos(this.value);">
+						<div class="input-group-addon">
+							<strong>Pesos</strong>
+						</div>						
 					</div>
+					<div class="input-group">
+						<input type="number" 
+						class="form-control input-lg" 
+						id="numDias"
+						placeholder="¿Para administrar durante?"
+						onchange="setNumeroDiasPorAdministrar(this.value);">
+						<div class="input-group-addon">
+							<strong>Dias</strong>
+						</div>						
+					</div>
+					<button type="submit" class="btn-lg btn-primary">Calcular</button>
 				</div>
-				<button type="submit" class="btn btn-primary">Agregar</button>
-			</form>	
+			</form>
+
+			<br>
+
+			<div class="alert alert-info">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Tip: </strong> Presiona Enter o Clicka afuera de los campos para poder ver los cambios.
+			</div>
 <!--
 			<form class="form-horizontal" role="form">
 				<div class="form-group">
@@ -54,19 +75,18 @@
 						onchange="setfondos(this.value);">
 					</div>
 				</div>
-			</form>-->
-<!--
+			</form>
+
 			<input id="fondos" class="bigInput" type="number" 
 			placeholder="¿Cuánto dinero?" onchange="setfondos(this.value);">
 -->
-			<br>
-			
+		<!--	
 			<hr>
 
 			<p>
 				<b>AYUDA:</b> Lo primero que tienes que hacer para conocer siempre cuanto debería  gastar hoy es contestar las siguientes dos preguntas. 
-			</p>
-
+			</p>-->
+<!--
 			para administrar durante
 			<input id="numDias" class="bigInput" type="number" placeholder="¿Cuántos días?" onchange="setNumeroDiasPorAdministrar(this.value);">
 			 dias			
@@ -76,13 +96,34 @@
 			</p>
 
 			<br>
-			
+			-->
 			<hr>
+			
 
+			<h2>¿Cuánto dinero he gastado hoy?</h2>
+			
+			<br>
+
+			<div class="alert alert-warning">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>AYUDA: </strong> Registra aquí todo lo que vayas gastando hoy.	 
+			</div>
+
+			<form class="form-inline" role="form">
+				<div class="form-group">
+					<input type="number" 
+					class="form-control input-lg" 
+					id="email"
+					placeholder="Registrar consumo"
+					onchange="registrarConsumo(this.value);">
+				</div>
+				<button type="submit" class="btn-lg btn-danger">Registrar</button>
+			</form>
+<!--
 			<p>
-				<b>AYUDA:</b> Registra aquí todo lo que gastes hoy.				
+				<b>AYUDA:</b> Registra aquí todo lo que vayas gastando hoy.
 			</p>
-			<input class="bigInput" type="number" placeholder="Registrar consumo" onchange="registrarConsumo(this.value);">
+			<input class="bigInput" type="number" placeholder="Registrar consumo" onchange="registrarConsumo(this.value);">-->
 			<!--
 			<input class="bigInput" type="number" placeholder="registrar ingreso"
 			onchange="registrarIngreso(this.value);">-->
@@ -91,25 +132,43 @@
 
 			<hr>
 
-			<b>TIP:</b> Ten en cuenta que este valor se actualiza una vez introducido algún gasto.
-			<br>
-			<br>
-			¿Cuanto deberia gastar hoy? <b><span class="bigText" id="cuantoGastar"></span>COP</b>
-			<br>
-			<br>
+			<div class="alert alert-danger">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>RECUERDA: </strong> este valor se actualiza una vez introducido algún gasto.
+			</div>
 
-			¿Cuantos dias faltan? <b><span class="bigText" id="cuantosDias"></span></b>
+			<div class="row">
+				<div class="col-xs-6 well">
+					<h3>¿Cuanto deberia gastar hoy?</h3>
+					<h1>
+						<strong>
+							<span id="cuantoGastar"></span>COP
+						</strong>
+					</h1>				
+				</div>
+				<div class="col-xs-6 well">
+					<h3>¿Cuantos dias faltan?</h3>
+					<h1>
+						<strong>
+							<span id="cuantosDias"></span> Días
+						</strong>
+					</h1>
+				</div>
+			</div>
 
 			<hr>
-
-			<br>
 
 			<h1><a href="https://goo.gl/forms/CmrVv3T4KTX37hi12" target="_blank"><span style="font-size: 34pt">Mantenme al tanto de las mejoras!!</span></a></h1>
 
 			<p><b>IMPORTANTE:</b> Esta aplicación es un producto aun en etapa de desarrollo temprano, muchos elementos pueden cambiar. Con tu ayuda podremos ir mejorándola día a día. Envíanos tus sugerencias y comentarios a través de alguna de las siguientes redes.</p>
-			<a href="https://www.facebook.com/gamebite10/" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
-			<a href="https://twitter.com/gamebite10" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
-
+			<div class="row">
+				<div class="col-xs-6">
+					<a href="https://www.facebook.com/gamebite10/" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
+				</div>
+				<div class="col-xs-6">
+					<a href="https://twitter.com/gamebite10" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
+				</div>
+			</div>
 		</div>
 
 		
