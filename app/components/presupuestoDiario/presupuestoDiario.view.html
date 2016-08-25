@@ -1,0 +1,156 @@
+<div class="jumbotron">
+	<h1>{{strPrueba}}</h1>
+	<h1>¿Cuánto debería gastar hoy?</h1>
+
+	<h2>
+		Dinero disponible
+		<small>
+			Calculemos tu presupuesto
+		</small>
+		<button type="button" class="btn btn-success" 
+		data-toggle="collapse"
+		data-target="#configuracion">
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
+			Mostrar/Ocultar
+		</button>
+	</h2>
+
+	<div id="configuracion" class="collapse">
+		<div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>AYUDA: </strong> Lo primero que debes hacer para conocer cuánto debes gastar hoy es contestar las siguientes dos preguntas.
+		</div>
+		<form class="form-inline" role="form">
+			<div class="form-group">
+				<div class="input-group">
+					<select class="selectpicker" data-live-search="true"
+					data-style="btn-lg">
+						<option data-tokens="beca sostenimiento icetex">
+							¿Cuanto me queda del subsidio de sostenimiento?
+						</option>
+						<option data-tokens="salario">
+							¿Cuanto me queda del salario?
+						</option>
+						<option data-tokens="otra otro">
+							otra opción
+						</option>
+					</select>
+
+					<input type="number" 
+					class="form-control input-lg" 
+					id="fondos"
+					placeholder="¿Mi presupuesto es de?"
+					onchange="setfondos(this.value);">
+					<div class="input-group-addon">
+						<strong>Pesos</strong>
+					</div>						
+				</div>
+				<button type="button" class="btn-lg btn-primary">
+					Agregar
+				</button>
+				<br><br>
+				<div class="input-group">
+					<div class="input-group-addon input-lg">
+						Este dinero lo administrare durante
+					</div>	
+					<input type="number" 
+					class="form-control input-lg" 
+					id="numDias"
+					placeholder="¿cuantos dias?"
+					onchange="setNumeroDiasPorAdministrar(this.value);">
+					<div class="input-group-addon">
+						<strong>Dias</strong>
+					</div>					
+				</div>						
+				<button type="button" class="btn-lg btn-warning">
+					Establecer
+				</button>
+			</div>
+		</form>
+
+
+		<br>
+
+		<div class="alert alert-info">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Tip: </strong> Presiona Enter o Clicka afuera de los campos para poder ver los cambios.
+		</div>
+	</div>
+
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="col-xs-6 well">
+		<h3>¿Cuanto deberia gastar hoy?</h3>
+		<h1>
+			<strong>
+				<span id="cuantoGastar"></span> COP
+			</strong>
+		</h1>				
+	</div>
+	<div class="col-xs-6 well">
+		<h3>¿Cuantos dias faltan?</h3>
+		<h1>
+			<strong>
+				<span id="cuantosDias"></span> Días
+			</strong>
+		</h1>
+	</div>
+</div>
+
+<div class="alert alert-danger">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<strong>RECUERDA: </strong> este valor se actualiza una vez introducido algún gasto.
+</div>
+
+<hr>			
+
+<h2>¿Cuánto dinero he gastado hoy?</h2>
+
+<br>
+
+<div class="alert alert-warning">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<strong>AYUDA: </strong> Registra aquí todo lo que vayas gastando hoy.	 
+</div>
+
+<form class="form-inline" role="form">
+	<div class="form-group">
+		<input type="number" 
+		class="form-control input-lg" 
+		id="email"
+		placeholder="Registrar consumo"
+		onchange="registrarConsumo(this.value);">
+	</div>
+	<button type="button" 
+	class="btn-lg btn-danger"
+	onclick="preventDefault();">Registrar</button>
+</form>
+
+<br>
+
+<hr>
+
+<h1><a href="https://goo.gl/forms/CmrVv3T4KTX37hi12" target="_blank" onclick="gaHitEvent('social', 'subscribe', 'El usuario abrio el link para subscribirse al newsletter')"><span style="font-size: 34pt">Mantenme al tanto de las mejoras!!</span></a></h1>
+
+<p><b>IMPORTANTE:</b> Esta aplicación es un producto aun en etapa de desarrollo temprano, muchos elementos pueden cambiar. Con tu ayuda podremos ir mejorándola día a día. Envíanos tus sugerencias y comentarios a través de alguna de las siguientes redes.</p>
+<div class="row">
+	<div class="col-xs-6">
+		<a href="https://www.facebook.com/gamebite10/" onclick="gaHitEvent('social', 'facebook', 'El usuario dio click en la red social de facebook')" target="_blank"><img src="https://www.facebookbrand.com/img/fb-art.jpg"></a>
+	</div>
+	<div class="col-xs-6">
+		<a href="https://twitter.com/gamebite10" onclick="gaHitEvent('social', 'twitter', 'El usuario dio click en la red social de twitter')" target="_blank"><img src="http://www.gmkfreelogos.com/logos/T/img/twitter-logo.gif"></a>
+	</div>
+</div>
+
+
+
+<!--
+<hr>
+<h1>Historial de gastos</h1>
+<input type="button" value="Borrar historial" onclick="resetHistorial()" ></input>
+<ul id="historialGastos">
+</ul>
+-->	

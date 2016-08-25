@@ -87,7 +87,8 @@ function registrarIngreso(value)
 
 function getCuantoDeberiaGastarHoy(value)
 {
-	return Math.floor(fondos/getDiasRestantes());
+	var cuantoGastarHoy = Math.floor(fondos/getDiasRestantes());
+	return (cuantoGastarHoy === NaN) ? 0 : cuantoGastarHoy;
 }
 
 // @arguments: strings en el siguiente formato de fecha dd/mm/yyyy
@@ -109,7 +110,8 @@ function getDiasRestantes()
 
 function mostrarCuantoDeberiaGastar()
 {
-	cuantoDeberiaGastar_element.innerHTML = getCuantoDeberiaGastarHoy();
+	var cuantoGastar = getCuantoDeberiaGastarHoy();
+	cuantoDeberiaGastar_element.innerHTML = !cuantoGastar ? 0 : cuantoGastar;
 }
 
 function mostrarCuantosDiasFaltan()
@@ -122,6 +124,7 @@ function saveChanges()
 	localStorage.fondos = fondos;
 	localStorage.numeroDias = numeroDias;
 	mostrarCuantoDeberiaGastar();
+	mostrarCuantosDiasFaltan();
 }
 
 // Asegura que exista el objeto q almacena el historial
